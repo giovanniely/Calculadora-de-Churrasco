@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700;800&display=swap"
+        rel="stylesheet">
+
+    <title>Calculadora de Churrasco</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="img/churr.jpg" alt="Logo do churrascão" height="200px">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="titulo-principal">Churrascada</h1>
+            <form name="camposFormulario">
+                <p>Insira quantas pessoas irão no churrasco</p>
+                <input type="number" name="convidados" id="convidados">
+
+                <div class="blocos-editaveis">
+                    <!-- Seção de comidas -->
+                    <section class="comida">
+                        <h2>Carnes</h2>
+                        <div class="campo-form">
+                            <label for="bovina">Bovina</label>
+                            <input type="text" name="bovina" id="bovina" placeholder="Valor do Kg">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="frango">Frango</label>
+                            <input type="text" name="frango" id="frango" placeholder="Valor do Kg">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="suina">Suina</label>
+                            <input type="text" name="suina" id="suina" placeholder="Valor do Kg">
+                        </div>
+                    </section>
+
+                    <!-- Seção de bebidas -->
+                    <section class="bebida">
+                        <h2>Bebidas</h2>
+                        <div class="campo-form">
+                            <label for="refri">Refrigerante (Por Litro)</label>
+                            <input type="text" name="refri" id="refri" placeholder="Valor por Litro">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="cerveja">Cerveja (Lata 355ml)</label>
+                            <input type="text" name="cerveja" id="cerveja" placeholder="Valor do unidade">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="vodka">Vodka</label>
+                            <input type="text" name="vodka" id="vodka" placeholder="Valor por Litro">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="energetico">Energético</label>
+                            <input type="text" name="energetico" id="energetico" placeholder="Valor por Litro">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="quantidadePessoasBebemCerveja">N. de pessoas que bebem cerveja</label>
+                            <input type="number" name="suina" id="suina" placeholder="Número de pessoas">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="quantidadePessoasBebemVodkaComEnergetico">N. de pessoas que bebem vodka com
+                                energético</label>
+                            <input type="number" name="suina" id="suina" placeholder="Número de pessoas">
+                        </div>
+
+                    </section>
+                </div>
+
+                <button type="submit" class="btn-calcular" id="calcular">Fazer cálculo</button>
+
+                <section class="resultado-section" id="resultado">
+                    <h2 class="titulo-secao">Resultado</h2>
+
+                    <!-- Resultado da tabela da Comida -->
+                    <table class="tabela">
+
+                        <!-- Linha qtde/total -->
+                        <tr>
+                            <th></th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                        </tr>
+
+                        <!-- Linha carne necessária -->
+                        <tr>
+                            <th>Carne bovina necessária para o churrasco</th>
+                            <td class="valor-resposta" id="qtd-bovina"></td>
+                            <td class="valor-resposta" id="valor-bovina"></td>
+                        </tr>
+
+                        <!-- Linha frango necessário -->
+                        <tr>
+                            <th>Frango necessário para o churrasco</th>
+                            <td class="valor-resposta" id="qtd-frango"></td>
+                            <td class="valor-resposta" id="valor-frango"></td>
+                        </tr>
+
+                        <!-- Linha suíno necessário -->
+                        <tr>
+                            <th>Carne suína necessário para o churrasco</th>
+                            <td class="valor-resposta" id="qtd-suina"></td>
+                            <td class="valor-resposta" id="valor-suina"></td>
+                        </tr>
+
+                        <!-- Linha do total -->
+                        <tr>
+                            <th class="total">Total</th>
+                            <td class="valor-resposta" id="qtd-total-comida"></td>
+                            <td class="valor-resposta" id="valor-total-comida"></td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Resultado da tabela da Bebida -->
+                    <table class="tabela">
+
+                        <!-- Linha qtde/total -->
+                        <tr>
+                            <th></th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                        </tr>
+
+                        <!-- Linha de refri necessária -->
+                        <tr>
+                            <th>Quantidade de Refrigerante</th>
+                            <td class="valor-resposta" id="qtd-refri"></td>
+                            <td class="valor-resposta" id="valor-refri"></td>
+                        </tr>
+
+                        <!-- Linha de cerveja necessário -->
+                        <tr>
+                            <th>Quantidade de Cerveja</th>
+                            <td class="valor-resposta" id="qtd-cerveja"></td>
+                            <td class="valor-resposta" id="valor-cerveja"></td>
+                        </tr>
+
+                        <!-- Linha de vodka necessário -->
+                        <tr>
+                            <th>Quantidade de Vodka</th>
+                            <td class="valor-resposta" id="qtd-vodka"></td>
+                            <td class="valor-resposta" id="valor-vodka"></td>
+                        </tr>
+
+                        <!-- Linha de energético necessário -->
+                        <tr>
+                            <th>Quantidade de Energético</th>
+                            <td class="valor-resposta" id="qtd-energetico"></td>
+                            <td class="valor-resposta" id="valor-energetico"></td>
+                        </tr>
+
+                        <!-- Linha do total -->
+                        <tr>
+                            <th class="total">Total</th>
+                            <td></td>
+                            <td class="valor-resposta" id="valor-total-bebida"></td>
+                        </tr>
+
+                    </table>
+
+                </section>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Site criado por <a href="https://github.com/giovanniely">Giovanni Ely</a></p>
+    </footer>
+
+</body>
+
+</html>
